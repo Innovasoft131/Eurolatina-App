@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar align="center">
+    <ion-title>Maquinas</ion-title>
+    <ion-buttons slot="start" >
+      <ion-button (click)="mostrar()">
+       <ion-icon slot="icon-only" name="grid" color="primary"></ion-icon>
+      </ion-button>
+     </ion-buttons>
+    <ion-buttons slot="end" (click)="presentPopover($event)">
+      <ion-button>
+        <ion-icon slot="icon-only" color="primary" name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="scan()">
+      <ion-icon name="qr-code" ></ion-icon>
+    </ion-fab-button>
+  </ion-fab>  
+  <ion-item class="dne" *ngIf="ver" color="medium">
+    <ion-label>Sin Datos</ion-label>
+  </ion-item> 
+  <ion-list>
+    <ion-reorder-group disabled="false" (ionItemReorder)="doReorder($event)">
+    <ion-item (click)="obtenermaquina(item)"  *ngFor="let item of maquinas">
+      <ion-label>L{{item.idLinea}}: {{item.idMaquina}} {{item.maquina}}</ion-label>
+      <ion-reorder slot="end"></ion-reorder>
+    </ion-item>
+  </ion-reorder-group>
+  </ion-list>
+</ion-content>

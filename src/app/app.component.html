@@ -1,0 +1,35 @@
+<ion-app>
+  <ion-menu side="start" id="tejedor" menuId="tejedor" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary" align="center">
+        <ion-title>Eurolatina</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+        <ion-item class="letra"><ion-icon color="success" name="warning" class="icon"></ion-icon><a class="ancla" [routerLink]="[ '/problemas']">Problemas Generales</a></ion-item>
+      </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-menu side="start" id="especial" menuId="especial" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary" align="center">
+        <ion-title>Eurolatina</ion-title>
+      </ion-toolbar>
+    </ion-header> 
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item class="letra" (click)="pausar()"><ion-icon name="pause-circle" class="icon"></ion-icon><a class="ancla">Pausar Procesos</a></ion-item>
+          <ion-item class="letra" (click)="activar()"><ion-icon name="play-skip-forward-circle" class="icon"></ion-icon><a class="ancla">Activar Procesos</a></ion-item>
+          <ion-item class="letra"><ion-icon  name="warning" class="icon"></ion-icon><a class="ancla" [routerLink]="[ '/problemas']">Problemas Generales</a></ion-item>
+          <ion-item class="letra"><ion-icon  name="print" class="icon"></ion-icon><a class="ancla" [routerLink]="[ '/maquinas']">Modulo 2 Maquinas</a></ion-item>
+          <ion-item class="letra"><ion-icon  name="pricetags" class="icon"></ion-icon><a class="ancla" [routerLink]="[ '/planchado']">Modulo 3 Planchado</a></ion-item>
+       </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

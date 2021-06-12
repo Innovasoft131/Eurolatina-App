@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar align="center">
+    <ion-title>Problemas</ion-title>
+        <ion-buttons slot="start" >
+         <ion-button (click)="mostrar()">
+          <ion-icon slot="icon-only" name="grid" color="primary"></ion-icon>
+         </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end" (click)="presentPopover($event)">
+          <ion-button>
+            <ion-icon  slot="icon-only" name="person" color="primary"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+     <ion-col size="12" align="center">
+       <ion-item>
+       <ion-label>Problemas Frecuentes</ion-label>
+     </ion-item>
+     </ion-col>
+    </ion-row>
+    <ion-row class="a"> 
+      <ion-col size="12" >
+       <ion-select [(ngModel)]="seleccion" (ionChange)="onProvinceChanged($event)"  okText="Aceptar" cancelText="Cancelar" placeholder="Selecciona una opcion">
+         <ion-label >Problemas</ion-label>
+         <ion-select-option  class="selectedr" *ngFor="let item of problemas" [value]="item.id">{{item.nombre}}</ion-select-option>
+       </ion-select>
+   </ion-col>  
+    </ion-row>
+    <ion-row class="a">
+     <ion-col size="12" align="center">
+       <ion-item>
+       <ion-label>Otro:</ion-label>
+     </ion-item>
+     </ion-col>
+    </ion-row>
+   <ion-row class="a">
+       <ion-col size="12">
+       <ion-item>
+         <ion-textarea [(ngModel)]="problemText" id="problemText" rows="6" cols="20" placeholder="Descripcion del problema..."></ion-textarea>
+       </ion-item>
+   </ion-col>
+   </ion-row>
+   <ion-row class="a">
+     <ion-col size="12" align="center">
+       <ion-button (click)="reportarProblema()" color="danger" shape="round" fill="outline" expand="block">
+         Reportar Problema
+       </ion-button>
+     </ion-col>
+   </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,24 @@
+.itemss{
+    margin-top: 12px;
+}
+.encabezado{
+    background-color: #757575;
+    color: white;
+}
+.aceptar{
+    background-color:green
+}
+.iconoo{
+    color: white !important;
+}
+.dne{
+    text-align: center;
+    font-size: 15px; 
+    font-size-adjust: unset;
+}
+.alert-wrapper { 
+    .alert-title { text-align: center; } 
+    .alert-sub-title { text-align: center; } 
+    .alert-message { text-align: center; } 
+    .alert-button-inner { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+}

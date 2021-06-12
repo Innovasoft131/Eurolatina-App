@@ -1,0 +1,20 @@
+<ion-content class="contenido"> 
+  <div class="image">
+    <img src="../../assets/Logo EuroLatina.png" alt="">
+  </div>
+  <div class="todo">
+  <ion-list class="lista">
+  <ion-item class="jjgc">
+  <!-- <ion-label position="stacked" class="labels">Usuario</ion-label> -->
+  <ion-input type="text" fill="outline" [(ngModel)]="usuario" id="usuario" placeholder="Usuario"></ion-input>
+    
+  </ion-item>
+  <ion-item class="jjgc">
+  <!-- <ion-label position="stacked" class="labels">Constraseña</ion-label> -->
+  <ion-input class="np" [type]="_showpassword ? 'text': 'password'" fill="outline" [(ngModel)]="clave" id="clave" placeholder="Contraseña"></ion-input>
+  <ion-icon [name]="_passwordToggleIcon" slot="end" (click)="verContra()"></ion-icon>
+  </ion-item>
+  <ion-button size="5" shape="round" fill="outline" expand="block" (click)="validar()" class="boton">Entrar</ion-button>
+  </ion-list>
+  </div>
+</ion-content>

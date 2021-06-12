@@ -1,0 +1,8 @@
+{
+  "name": "Eurolatina",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
